@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        body {
+            background-color: black;
+            color: rgb(204, 198, 198);
+            font-family: Arial, sans-serif;
+            margin: 20px
+        }
+        .header {
+            background-color: #072b17;
+            padding: 10px;
+            text-align: center;
+            width: 800px;
+            margin: auto;
+        }
+        .main-box {
+            background-color: #143725;
+            padding: 10px;
+            border-radius: 10px;
+            max-width: 600px;
+            margin: auto;
+        }
+        .delete-btn {
+            background-color: #769e45;
+            color: rgb(30, 29, 29);
+            border: none;
+            border-radius: 5px;
+            margin: 5px;
+            cursor: pointer;
+        }
+  #taskInput ::placeholder {
+    color: #000000;
+ }
+
+        
+        
+        
+        
+        
+        
+        
+        .weather {
+            background-color: #cacfd3;
+            padding: 10px;
+            text-align: center;
+            width: 800px;
+            margin: auto;
+            margin-top: 100px;
+            border-radius: 10px;
+            color: rgb(6, 6, 6);
+        }
+
+        #cityInput, #addCityButton {
+            background-color: #3e6e98;
+            color: rgb(255, 255, 255);
+            border: 1px solid #a3a2a2;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        .heading {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        #cityInput::placeholder {
+            color: rgb(236, 233, 233);
+        }
+        #cityInput{
+            padding: 10px;
+            border-radius: 10px;
+            border: 1px solid #ccc;
+            outline: none;
+        }   
+
+
+
+
+
+        
+        
+        
+        
+        
+        
+        
+        #box {
+            background-color: #aaacac;
+            padding: 20px;
+            color: rgb(21, 20, 20);
+            width: 600px;
+            display: flex;
+            flex-direction: column;
+            border-radius: 10px;
+            margin: auto;
+            margin-top: 100px;
+            width: 800px;
+            text-align: center;
+        }
+        
+        .itemsBox {       /* div for each product separately*/
+            margin: 2px;
+            background-color: #585656;
+            width: auto;
+            padding: 5px;
+             color: #d6d2d2;
+             border-radius: 20px;
+        }
+
+        .itemsBox button, #checkout{
+            background-color: rgb(185, 43, 43);
+            margin-left: 222px;
+            color: #e3dada;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            border-radius: 20px;
+            height: 40px;
+            width: 100px;
+            padding: 5px;
+            border: none;
+        }
+        .hidden {
+  display: none;
+}
+
+
+
+
+
+
+
+#box4 {
+    background-color: #0c1d3a;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    margin-top: 100px;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    border-radius: 20px;
+    width: 800px;
+    text-align: center;
+}
+#expenses, #Amt {
+    background-color: #dbdddd;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    padding: 8px;
+    margin: 0px;
+}
+#expenses::placeholder,#Amt::placeholder{
+    color: #181717;
+}
+#submitAmtBtn, .expensesStyle button{
+    border-radius: 20px;
+    height: 30px;
+    border: none;
+    padding: 0 12px;
+    background-color: #d4bb40;
+    color: rgb(2, 1, 1);
+    margin: 30px;
+    cursor: pointer;
+}
+#expenseMsg{
+    color: #dccf6e;
+    font-size: 20px;
+}
+#totalPrice{
+    color: #e0dcdc;
+}
+.expensesStyle{
+    background-color: #132647;
+    border-radius: 20px;
+    outline: none;
+    border: none;
+    padding: 0 20px;
+    margin: 5px auto;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 45px;
+    overflow: hidden;
+font-size: 15px;
+}
+
+    </style>
+</head>
+<body>
+
+
+
+
+
+
+<div class="header">
+    <h1>To-Do List</h1>
+    
+    <div class="main-box">
+        <input type="text" id="taskInput" placeholder="Add a new task">
+        <button id="addTaskButton">Add Task</button>
+    </div>
+
+    <ul id="taskList" style="list-style-type: none;"></ul>
+</div>
+
+
+
+
+
+<div class="weather app">
+   <div class="heading">
+     <h1>Weather</h1>
+    <img src="image3.jpg" alt="Weather Icon" style="width: 100px; height: 80px; border-radius: 10px; margin: 10px;">
+</div>
+    <div id="cityInputContainer">
+        <input type="text" id="cityInput" placeholder="Enter city name">
+        <button id="addCityButton">Get Weather</button>
+    </div>
+
+    <div id="weatherInfo" class="hidden">
+    <h2 id="city-name"></h2>
+    <p id="temperature"></p>
+    <p id="description"></p>
+</div>
+
+    <p id="error-message" class="hidden" style="color: red;">City not found. Please enter valid input.</p>
+</div>
+
+
+
+
+
+
+<div id="box">
+    <h1>PRODUCTS</h1>
+
+<div id="items">
+    <!--Items will be added here and then will be moved to cart-->
+    
+</div>
+
+<h2 id="cart">Shopping Cart</h2>
+<div id="itemsAdded">
+    <!--final items will be added here-->
+    <h3 id="cart-info" style="color: #b11d1d;" class="">Your cart is empty!</h3>
+</div>
+
+<div id="cart-total" class="hidden">
+    <p>Total: $<span id="total-price">0.00</span></p>
+    <button id="checkout">Checkout</button>
+</div>
+</div>
+
+
+
+
+
+
+<div id="box4">
+    <h1>EXPENSE TRACKER</h1>
+
+    <div id="inputData">
+<input type="text" id="expenses" placeholder="Expenses">
+<input type="number" id="Amt" placeholder="Enter amount">
+<button id="submitAmtBtn">Add Expense</button>
+
+<h2 id="expenseMsg">Your Expenses</h2>
+
+<div id="addedExpenses">
+<h3 id="totalPrice">Total : $0.00</h3>
+</div>
+    </div>
+</div>
+
+
+
+<script src="projects.js"></script>
+</body>
+</html>

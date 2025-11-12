@@ -1,0 +1,423 @@
+ <!-- Styling through 3 ways-->
+
+            <!DOCTYPE html>
+<html lang="en">
+<head>          <!-- Things written inside are not visible on the page -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website</title>
+    <style>
+        body {
+            background-color: rgb(27, 26, 26); 
+            font-family: Arial, sans-serif;  
+            padding: 2%; 
+            margin: 0px;  
+            display: flex;  /* Flexbox is used to align items in a container */
+            position: relative;
+            justify-content: center;  /* left to right- generally used when we are working with flexbox or css grids */
+            align-items: center;        /* top to bottom */
+            flex-direction: column; 
+        }
+        h1 {
+            color: rgb(237, 77, 77); ;  /* if it would have been a class then represent it using .{class-name} */
+        }
+        form-input{
+            display: flexbox;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            
+        }
+    </style>
+</head>
+<body>             <!-- Things written inside are visible on the page -->
+<div style="padding: 20px;">              <!-- It is a container so that specific sections may be targeted -->
+    <h1>Login Page</h1>
+    <form style="color: aliceblue;">
+       <label for="email">Email</label> 
+       <input type="text" id="email" name="email" placeholder="Email" required>     <!-- Press ctrl+space to see list of attributes in 'type' -->
+       <label for="password">Password</label>                                        <!-- id (identifier) links the label to the input-->
+        <input type="Password" name="Password" placeholder="Password" required>
+        <label for="Select"><strong>Select :</strong></label>
+        <select name="select" id="select" required>
+            <option value="option1">Option 1</option>
+            <option value="option2">Option 2</option>
+            <option value="option3">Option 3</option>
+        <input type="checkbox" name="checkbox" placeholder="checkbox" required>
+
+        <button type="submit" title="Click to submit your form">Submit</button>    <!-- Tooltip-Label that appears when you hover over something -->
+        <button type="reset">Reset</button>
+
+        
+
+    </form>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Semantic web page -->
+ <!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Semantic Web Page</title>
+        <style>
+            article h2 {               /* This is a  descendent selector that selects h2 inside article */
+                color: beige;
+            }
+            ul > li {            /* This is a child selector not descendent that selects li inside ul */
+                color: red;
+                text-decoration: none;
+            }
+
+            /* If we just need to style descendents we write .nav ul or .nav li or .nav a */
+
+            .nav a {
+                color: lightcyan;
+                position: relative;
+                text-decoration: none; /* This removes the underline from the link */
+                padding: 5px 15px;
+            }
+            .nav a::after {
+                content: "abc"; 
+                color: lightblue;
+                transform: scaleX(0);
+                position: absolute;
+                transition: transform 0.3s ease-in-out;
+                left: 0;
+                right: 10;
+                bottom: 20%;
+                height: 1px;
+                width: 10vb;
+                background-color: seashell;
+            }
+            .nav a:hover::after {
+                transform: scaleX(1);
+            }
+        </style>    
+        </head>
+    <body style="padding: 20px;">
+        <header>
+           <hgroup>
+         <!--first way of styling-->    
+         <h2 style="color: beige;">Semantic Web Page</h2>        <!-- Semantic HTML means using HTML tags that clearly describe their meaning and purpose.
+            div is non semantic whereas as header, section etc are semantic -->
+            </hgroup>
+        </header>
+        <nav class="nav">
+            <ul style="color: cornsilk;">
+                <li><a href="#section1" style="color: aliceblue;">About Us</a></li>
+                <li><a href="#section2">Home</a></li>
+            </ul>
+        </nav>
+        <main>
+            <section id="section1">
+                <h2 style="color: beige;">Home</h2>
+                <p style="color: beige;">Cityscape.</p>
+                <figure>
+                    <img src="image1.jpg" alt="Cityscape" width="300" height="200"> <!-- alt is used to describe the image in case it does not load -->
+            </figure>
+        </section>
+
+            <article style="color: grey;">Lorem, ipsum.</article>
+            <section id="section2">
+                <h2 style="color: beige;">About Us</h2>
+                <p style="color: gray;">Lorem ipsum dolor</p>
+        </main>
+        <footer>
+            <p style="color: red;">&copy; Web Page</p>
+        </footer>
+
+
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <!-- Creating a table  -->
+         <table style="color: bisque; padding: 20px;">
+            <tr>
+            <th>Header 1</th>
+            <th>Header 2</th>
+         </tr>
+
+            <tr>
+                <td>Data 1</td>
+                <td>Data 2</td>
+            </tr>
+            </table>
+
+            <!--Progress bar-->
+            <progress style=padding:20px value="50" max="100">50%</progress> <!-- Progress bar is used to show the progress of a task -->
+
+
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <!-- About grids and flexbox-->
+             <!DOCTYPE html>
+<html lang="en">   
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid and Flexbox</title>
+    <style>
+        .container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+            gap: 0px; /* space between grid items */
+            padding: 20px;
+            border: 2px silver solid;
+            margin: 20px;
+        }
+        .item {
+            background-color: rgb(205, 108, 128);
+            padding: 20px;
+            text-align: center;
+        }
+        .items {
+            background-color: rgb(205, 108, 128);
+            padding: 20px;
+            text-align: center;
+        }
+        .item:nth-child(odd) {
+            background-color: rgb(196, 176, 176); 
+        }
+        .items:nth-child(odd) {
+            background-color: rgb(196, 176, 176); 
+        }
+        .items {
+            grid-template-columns: 1fr 2fr 1fr;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item">Item 1</div>
+        <div class="item">Item 2</div>
+        <div class="item">Item 3</div>
+        <div class="items">Item 4</div>
+        <div class="items">Item 5</div>
+        <div class="items">Item 6</div>
+    </div>
+
+
+
+
+
+
+
+
+        
+    
+    
+    
+    
+    
+    
+    
+    
+    <!-- Basic Design -->
+         <!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Basic Design</title>
+        <style>
+            
+            .Design {
+            display: flex;
+            border: 2px solid rgb(255, 255, 255);
+            margin: 50px;
+            }
+
+            .rotated-text {
+            width: 45px;
+            height: 480px;
+            margin-right: 30px;
+            background-color: #a59f9f;
+            writing-mode: vertical-rl;
+            transform: rotate(180deg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            }
+
+            .rotated-text h4 {
+            font-size: 18px;
+            font-weight: bold;
+            color: #000;
+            text-align: center;
+            letter-spacing: 2px;
+            }
+
+        
+            .layout {
+            background-color: #1c1c1c; 
+            height: 450px;
+            padding: 10px;
+            width: 700px;
+             }
+
+             nav ul {
+            display: flex;
+             list-style-type: none;      
+             gap: 40px;                  
+             padding: 0;
+             margin-top: 5px;
+             margin-bottom: 30px;
+             justify-content: center;        
+             }
+
+            nav ul li {
+                display: inline;
+            }
+
+            nav ul li a {
+                color: #7f7a7a;
+                text-decoration: none;
+                font-size: 18px;
+                font-weight: bold;
+                transition: color 0.3s ease-in-out;
+            }
+
+            .content {
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-start;
+            }
+            .text {
+                display: inline-block;
+            }
+
+            .layout h1 {
+                color: #fff;
+                text-align: left;
+                font-weight: bold;
+                font-style: italic;
+                margin-top: 0px;
+                font-size: 60px;
+
+            }
+            .layout h2 {
+                color: #fff;
+                text-align: left;
+                font-style: italic;
+                font-size: 25px;
+            }
+            .layout h3 {
+                color: #fff;
+                text-align: left;
+                font-style: italic;
+                margin-top: 60px;
+                font-size: 25px;
+            }
+            .layout p {
+                color: #a49c9c;
+                text-align: left;
+                font-style: italic;
+            }
+
+        
+            button {
+                background-color: #d9d9d9; 
+                color: #3b3737;
+                border: none;
+                width: 170px;
+                margin-top: 20px ;
+                height: 50px;
+                border-radius: 35px;
+                font-style: italic;
+                padding: 10px 20px;
+                font-size: 16px;
+                cursor: pointer;
+                transition: background-color 0.3s ease-in-out;
+            }
+
+             img {
+                text-align: right;
+                margin-top: 20px;
+                height: 280px;
+                width: 360px;
+            }
+            
+
+    </style>
+         </head>
+         <body>
+            
+            
+            <div class="Design">
+
+                <div class="rotated-text">
+                    <h4>STYLE TAKES OVER</h4>
+                </div>
+            
+                <div class="layout">
+            <nav>
+                <ul>
+                    <li><a href="#home">HOME</a></li>
+                    <li><a href="#products">COLLECTION</a></li>
+                    <li><a href="#about">ABOUT</a></li>
+                    <li><a href="#contact">CONTACT</a></li>
+                </ul>
+            </nav>
+
+
+            <div class="content">
+
+                <div class="text">
+                    <h1>AIR MAX</h1>
+                <h2>NIKE AIR MAX 90</h2>
+                <h3>$98</h3>
+                <p>Nothing as fly, nothing as comfortable, nothing as proven.</p>
+
+                
+                <button>Add to Cart</button>
+                </div>
+                
+
+                
+                    <img src="image2.png" alt="Nike Air Max 90"> 
+                    </div>
+                    
+
+            </div>
+            </div>
+                
+         </body>
+        
+</html>
+            
+
+
+
+           

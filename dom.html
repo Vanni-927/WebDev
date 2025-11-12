@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM Example</title>
+    <style>
+
+
+
+body {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    display: flex;
+    background-color: #0e0e0e;
+    color: rgb(237, 231, 231);
+    flex-direction: column;
+    margin: 0px;
+    padding: 0px;
+    justify-content: center;
+    align-items: center;
+}
+
+div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 25px;
+}
+
+button {
+    background-color: beige;
+    border-radius: 15px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.highlight {
+    background-color: yellow;
+   display: block;
+    color: black;
+    width : 100%;
+}
+    
+    </style>
+</head>
+
+
+<body>
+<div class="container1">
+    <h1 id="mainHeading" style="font-style: italic;">Javascript DOM Examples</h1>
+<h2 id="heading1">Accessing DOM Elements</h2>
+    <p id="para1">This is a paragraph that can be modified on clicking!</p>
+    <button id="changeTextBtn">Change Text</button>
+    </div>
+
+
+    <div class="container2">
+    <h2 id="heading2">Traversing the DOM</h2>
+       <ul id="list1" style="list-style-type: none;">
+        <li>New York</li>
+        <li>Tokyo</li>
+        <li>Paris</li>
+        <li>London</li>
+       </ul>
+        <button id="HighlightBtn">Highlight First City</button>
+        </div>
+
+
+<div class="container3">
+    <h2 id="heading3">Manipulating DOM Elements</h2>
+    <p id="para2">Order: Latte</p>
+    <button id="orderBtn">Change order to Expresso</button>
+    </div>
+
+    
+    
+    <div class="container4">
+        <h2 id="heading4">Creating and Inserting Elements</h2>
+        <ul id="list2" style="list-style-type: none;">
+            <li>Bread</li>
+            <li>Milk</li>
+           </ul>
+        <button id="addBtn">Add to Cart</button>
+        </div>
+    
+
+        <div class="container5">
+            <h2 id="heading5">Removing DOM Elements</h2>
+            <ul id="list3" style="list-style-type: none;">
+                <li>Task 1</li>
+                <li>Task 2</li>
+                <li>Task 3</li>
+               </ul>
+            <button id="removeBtn">Remove last task</button>
+            </div>
+
+
+            <div class="container6">
+                <h2 id="heading6">Event Handling in the DOM</h2>
+                <button id="handleBtn">Click Here</button>
+                </div>
+
+
+                <div class="container7">
+                    <h2 id="heading7">Event Delegation</h2>
+                    <ul id="list4" style="list-style-type: none;">
+                        <li>Green Tea</li>
+                        <li>Black Tea</li>
+                        <li>Oolong Tea</li>
+                       </ul>
+                    <button id="selectBtn">Click to Select</button>
+                    </div>
+
+
+                    <div class="container8">
+                        <h2 id="heading8">Form Handling</h2>
+                       <form id="form1"> 
+                        <label for="input">Your Feedback: </label>
+                        <input type="text" id="input" placeholder="Write here!">
+                        <button type="submit">Submit</button>
+                        </form>
+                        <p id="para3"></p>
+                        </div>
+
+
+                        <div class="container9">
+                            <h2 id="heading9">DOM Content Loaded</h2>
+                           <p id="para4">Waiting for DOM to load</p>
+                            </div>
+
+
+                            <div class="container10">
+                                <h2 id="heading10">CSS Classes Manipulation</h2>
+                                <p id="para5">This text will change color.</p>
+                                <button id="changeBtn">Toggle Highlight</button>
+                                </div>
+        
+
+    <script src="./script.js"></script>
+</body>
+</html>
